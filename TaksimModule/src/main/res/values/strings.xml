@@ -2,4 +2,12 @@
     <string name="app_name">TaksimLayout</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="email_array">
+        <item>a1@gmail.com</item>
+        <item>a2@yahoo.com</item>
+        <item>a3@hotmail.com</item>
+        <item>a4@example.com</item>
+        <item>a5@abc.com</item>
+        <item>a6@dct.com</item>
+    </string-array>
 </resources>
