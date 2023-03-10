@@ -1,13 +1,13 @@
 Name : Taksim Islam Student Number: N01523847 
 ## Name
-Rent House Inc
+Taksim Layout
 ## Description
-This app have 5 pages. One splash page, one main screen, one rental page, one payment page and 2 pages for apartment and house section
+Have 3 fragment screen. First have email autotextcomplete input.If it is valid then i will pass to next screen. 3rd screen have my name and humber id and a picture of toronto
 ## Installation
 Minimum android required is API 28:Android 9 (Pie)
 
 
 Github project link:
-https://github.com/TaksimIslam3847/Taksimlab2
+https://github.com/TaksimIslam3847/TaksimIslamLab5.git
 
 

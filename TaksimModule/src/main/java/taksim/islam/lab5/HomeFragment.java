@@ -7,6 +7,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
+import android.widget.Button;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +17,7 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class HomeFragment extends Fragment {
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -53,12 +57,48 @@ public class HomeFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        View a = inflater.inflate(R.layout.fragment_home, container, false);
+
+        Button btn = a.findViewById(R.id.button);
+        String Pattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+
+        String[] emails = getResources().getStringArray(R.array.email_array);
+
+        AutoCompleteTextView auto = a.findViewById(R.id.autoCompleteTextView1);
+
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1, emails);
+        auto.setAdapter(adapter);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String Input = auto.getText().toString();
+                Bundle bundle = new Bundle();
+                if (Input.matches("")){
+                    auto.setError(getString(R.string.empty));
+                    Input = getString(R.string.empty);
+                    bundle.putString("Key", Input);
+                    getParentFragmentManager().setFragmentResult("Key", bundle);
+                }
+                else if (Input.matches(Pattern) && Input.length() > 0){
+                    bundle.putString("Key", Input);
+                    getParentFragmentManager().setFragmentResult("Key", bundle);
+                    auto.getText().clear();
+                }else{
+                    auto.setError(getString(R.string.invalid_email));
+                }
+
+
+            }
+        });
+        return a;
+
+
     }
 }

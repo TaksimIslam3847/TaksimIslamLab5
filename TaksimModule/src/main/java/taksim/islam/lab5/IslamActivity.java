@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
+import android.widget.AutoCompleteTextView;
 
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
@@ -49,5 +50,6 @@ public class IslamActivity extends AppCompatActivity implements TabLayoutMediato
     @Override
     public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
         tab.setText(titles.get(position));
+        tab.setIcon(R.drawable.rentlogo);
     }
 }
