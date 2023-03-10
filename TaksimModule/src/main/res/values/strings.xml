@@ -2,6 +2,9 @@
     <string name="app_name">TaksimLayout</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Name_and_no">Taksim Islam N01523847</string>
+    <string name="empty">Can\'t be empty</string>
+    <string name="invalid_email">Invalid email</string>
     <string-array name="email_array">
         <item>a1@gmail.com</item>
         <item>a2@yahoo.com</item>
